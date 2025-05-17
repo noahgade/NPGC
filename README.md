@@ -1,7 +1,7 @@
 # Nonlinear Permuted Granger Causality
 Repository shares data and files for:
 
-Gade, Noah D. and Rodu, Jordan (2025+). Nonlinear Permuted Granger Causality.
+- Gade, Noah D. and Rodu, Jordan (2025+). Nonlinear Permuted Granger Causality.
 
 Contents:
 - Code for metholodogy (.R and .cpp files).
