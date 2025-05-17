@@ -1,4 +1,6 @@
 # Simulation Study
 
 Contents:
-- Code used to obtain simulated data and results discussed in Section 4 and the Appendices (.R and .cpp files).
+- Data.R: functions to generate VAR and TAR data, calls Data.cpp.
+- Data.cpp: functions to generate VAR and TAR data.
+- DataGen.R: script to generate and save data used in Simulation Study.
