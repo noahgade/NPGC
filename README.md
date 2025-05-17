@@ -7,6 +7,7 @@ Contents:
 - Code for metholodogy (.R and .cpp files).
 - Simulation Study - code used to obtain simulated data and results discussed in Section 4 and the Appendices (.R and .cpp files).
 - Application Study - code used in application and results discussed in Section 5 (.R and .cpp files).
+- Data files (.RData) available at the [Google Drive link](https://drive.google.com/drive/u/1/folders/1EeUq1lMNhkleY2QdhjoV5d3k551mn59U).
 
 Some data was derived from repository ac-1 of the Collaborative Research in Computational Neuroscience Data Sharing website at http://dx.doi.org/10.6080/K0KW5CXR. We cite the following works:
 
