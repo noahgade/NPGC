@@ -4,7 +4,7 @@ library(tidyverse)
 library(Matrix)
 library(MASS)
 library(parallel)
-sourceCpp("/deac/sta/gadeGrp/gaden/NPGC/GC.cpp")
+sourceCpp("GC.cpp")
 
 # Simulation Code for NPGC
 npgc <- function(dat, type, hdim, omega, activation, y_select, z_select, x_select, max_lag, m = 199, k = 10, r = 25) {
