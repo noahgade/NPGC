@@ -9,7 +9,7 @@ Contents:
 - Application Study - code used in application and results discussed in Section 5 (.R and .cpp files).
 - Data files (.RData) available at the [Google Drive link](https://drive.google.com/drive/u/1/folders/1EeUq1lMNhkleY2QdhjoV5d3k551mn59U).
 
-Some data was derived from repository ac-1 of the Collaborative Research in Computational Neuroscience Data Sharing website at http://dx.doi.org/10.6080/K0KW5CXR. We cite the following works:
+Some data was derived from repository ac-1 of the Collaborative Research in Computational Neuroscience Data Sharing website at https://dx.doi.org/10.6080/K0KW5CXR. We cite the following works:
 
 - Machens, C. K., M. S. Wehr, and A. M. Zador (2004). Linearity of cortical receptive fields measured with natural sounds. *Journal of Neuroscience* 24 (5), 1089–1100.
 
