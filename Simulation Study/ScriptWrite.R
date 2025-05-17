@@ -23,7 +23,7 @@ save(NPGCkey, file = "NPGCkey.RData")
 set.seed(219)
 seeds <- sample(0:10000, nrow(key), replace = TRUE)
 for(iter in 1:nrow(NPGCkey)) {
-  filename <- paste0('~NPGC_', iter, '.R')
+  filename <- paste0('NPGC_', iter, '.R')
   fileConn <- file(filename)
   writeLines(c(paste0('source("GC.R")'),
                paste0('load("data.RData")'),
