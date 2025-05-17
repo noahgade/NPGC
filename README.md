@@ -4,9 +4,9 @@ Repository shares data and files for:
 Gade, Noah D. and Rodu, Jordan (2025+) Nonlinear Permuted Granger Causality.
 
 Contents:
-(1) Code for metholodogy (.R and .cpp files).
-(2) Simulation Study - code used to obtain simulated data and results discussed in Section 4 and the Appendices (.R and .cpp files).
-(3) Application Study - code used in application and results discussed in Section 5 (.R and .cpp files)
+- Code for metholodogy (.R and .cpp files).
+- Simulation Study - code used to obtain simulated data and results discussed in Section 4 and the Appendices (.R and .cpp files).
+- Application Study - code used in application and results discussed in Section 5 (.R and .cpp files)
 
 Some data was derived from repository ac-1 of the Collaborative Research in Computational Neuroscience Data Sharing website at http://dx.doi.org/10.6080/K0KW5CXR. We cite the following works:
 
