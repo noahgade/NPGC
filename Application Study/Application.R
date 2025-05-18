@@ -1,7 +1,7 @@
 rm(list = ls())
 library(parallel)
-source("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/GCApp.R")
-load("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/ApplicationData.RData")
+source("GCApp.R")
+load("ApplicationData.RData")
 RNGkind("L'Ecuyer-CMRG")
 set.seed(1058)
 seeds <- sample(0:10000, 39)
@@ -11,48 +11,43 @@ start <- Sys.time()
 start
 set.seed(seeds[1])
 NPGC1 <- npgc(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(3, 4), x_select = 2, m = 199, k = 10, r = 25)
-save(NPGC1, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/NPGC1.RData")
+save(NPGC1, file = "NPGC1.RData")
 Sys.time() - start
-mean(rowSums(NPGC1)[1] >= rowSums(NPGC1))
-
 
 start <- Sys.time() 
 start
 set.seed(seeds[2])
 NPGC2 <- npgc(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 4), x_select = 3, m = 199, k = 10, r = 25)
-save(NPGC2, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/NPGC2.RData")
+save(NPGC2, file = "NPGC2.RData")
 Sys.time() - start
-mean(rowSums(NPGC2)[1] >= rowSums(NPGC2))
 
 start <- Sys.time()
 start
 set.seed(seeds[3])
 NPGC3 <- npgc(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 3), x_select = 4, m = 199, k = 10, r = 25)
-save(NPGC3, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/NPGC3.RData")
+save(NPGC3, file = "NPGC3.RData")
 Sys.time() - start
-mean(rowSums(NPGC3)[1] >= rowSums(NPGC3))
-
 
 ## GAUSS
 start <- Sys.time()
 start
 set.seed(seeds[4])
 GAUSS1 <- gauss(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(3, 4), x_select = 2, m = 199, k = 10, r = 25)
-save(GAUSS1, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/GAUSS1.RData")
+save(GAUSS1, file = "GAUSS1.RData")
 Sys.time() - start
 
 start <- Sys.time()
 start
 set.seed(seeds[5])
 GAUSS2 <- gauss(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 4), x_select = 3, m = 199, k = 10, r = 25)
-save(GAUSS2, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/GAUSS2.RData")
+save(GAUSS2, file = "GAUSS2.RData")
 Sys.time() - start
 
 start <- Sys.time()
 start
 set.seed(seeds[6])
 GAUSS3 <- gauss(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 3), x_select = 4, m = 199, k = 10, r = 25)
-save(GAUSS3, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/GAUSS3.RData")
+save(GAUSS3, file = "GAUSS3.RData")
 Sys.time() - start
 
 
@@ -61,28 +56,28 @@ start <- Sys.time()
 start
 set.seed(seeds[7])
 ZERO1 <- zero(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(3, 4), x_select = 2, k = 10, r = 25)
-save(ZERO1, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/ZERO1.RData")
+save(ZERO1, file = "ZERO1.RData")
 Sys.time() - start
 
 start <- Sys.time()
 start
 set.seed(seeds[8])
 ZERO2 <- zero(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 4), x_select = 3, k = 10, r = 25)
-save(ZERO2, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/ZERO2.RData")
+save(ZERO2, file = "ZERO2.RData")
 Sys.time() - start
 
 start <- Sys.time()
 start
 set.seed(seeds[9])
 ZERO3 <- zero(dat = ApplicationData$data, type = 0, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = c(2, 3), x_select = 4, k = 10, r = 25)
-save(ZERO3, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/ZERO3.RData")
+save(ZERO3, file = "ZERO3.RData")
 Sys.time() - start
 
 
 rm(list = ls())
 library(parallel)
-source("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/GCApp.R")
-load("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/ApplicationData.RData")
+source("GCApp.R")
+load("ApplicationData.RData")
 runLASSO <- function(selection) {
   if(selection %in% 1:5) {
     penalty <- selection
@@ -127,7 +122,7 @@ runLASSO <- function(selection) {
   print(paste0(selection, ": ", start))
   set.seed(seeds[count])
   LResult <- lasso(dat = ApplicationData$data, type = 2, hdim = 200, omega = 1, activation = 0, y_select = 5, z_select = z_select, x_select = x_select, k = 10, r = 5, penalty = penalty, lambdas = 10^seq(-1, 2, 0.1), chooselambda = chooselambda)
-  save(LResult, file = paste0("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/LResult", selection, ".RData"))
+  save(LResult, file = paste0("LResult", selection, ".RData"))
   print(paste0(selection, ": Elapsed ", Sys.time() - start))
   return(LResult)
 }
