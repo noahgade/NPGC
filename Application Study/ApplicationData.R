@@ -10,25 +10,25 @@ library(ggplot2)
 library(R.matlab)
 
 # Jaguar mating call stimulus
-raw_x01 <- readMat("~/Wake Forest University Dropbox/Noah Gade/Research/crcns-ac1/wehr/Stimuli/fragments/1.mat")
+raw_x01 <- readMat("crcns-ac1/wehr/Stimuli/fragments/1.mat")
 x01sf <- raw_x01$stimulus[2,1,1]$param[,,1]$sf[1,1]
 x01key <- raw_x01$stimulus[2,1,1]$param[,,1]$description
 x01 <- raw_x01$stimulus[1,1,1]$samples
 
 # Response trial 060
-raw <- readMat(paste0("~/Wake Forest University Dropbox/Noah Gade/Research/crcns-ac1/wehr/Results/20020508-mw-003/20020508-mw-003-053.mat"))
+raw <- readMat(paste0("crcns-ac1/wehr/Results/20020508-mw-003/20020508-mw-003-053.mat"))
 y01 <- raw$response[,,1]$scale[1,1] * raw$response[,,1]$trace
 y01notes <- raw$param[,,1]
 y01sf <- raw$response[,,1]$sf[1,1]
 
 # Humpback whale stimulus
-raw_x02 <- readMat("~/Wake Forest University Dropbox/Noah Gade/Research/crcns-ac1/wehr/Stimuli/fragments/5.mat")
+raw_x02 <- readMat("crcns-ac1/wehr/Stimuli/fragments/5.mat")
 x02sf <- raw_x02$stimulus[2,1,1]$param[,,1]$sf[1,1]
 x02key <- raw_x02$stimulus[2,1,1]$param[,,1]$description
 x02 <- raw_x02$stimulus[1,1,1]$samples
 
 # Knudsen's frog stimulus
-raw_x03 <- readMat("~/Wake Forest University Dropbox/Noah Gade/Research/crcns-ac1/wehr/Stimuli/fragments/6.mat")
+raw_x03 <- readMat("crcns-ac1/wehr/Stimuli/fragments/6.mat")
 x03sf <- raw_x03$stimulus[2,1,1]$param[,,1]$sf[1,1]
 x03key <- raw_x03$stimulus[2,1,1]$param[,,1]$description
 x03 <- raw_x03$stimulus[1,1,1]$samples
@@ -46,7 +46,7 @@ lower <- 3
 upper <- 12
 ApplicationData$data <- as.matrix(Data %>% filter(time > lower & time < upper))
 ApplicationData$freq <- paste0(ResampleFreq, "Hz")
-save(ApplicationData, file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/ApplicationData.RData")
+save(ApplicationData, file = "ApplicationData.RData")
 
 plotx <- ggplot(ApplicationData$data) +
   scale_x_continuous("Experiment Time (s)", expand = c(0, 0), breaks = seq(ceiling(2 * lower) / 2, floor(2 * upper) / 2, 0.5)) +
@@ -75,6 +75,6 @@ ploty60 <- ggplot(ApplicationData$data) +
         axis.title.y = element_text(size = 20),
         axis.title.x = element_blank())
 
-quartz(file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/AppFigure053.pdf", type = "pdf", width = 13, height = 9)
+quartz(file = "AppFigure053.pdf", type = "pdf", width = 13, height = 9)
 grid.arrange(ploty60, plotx, ncol = 1, heights = c(0.36, 1))
 dev.off()
