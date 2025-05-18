@@ -8,4 +8,4 @@ Contents:
 - GC.cpp: functions for NPGC and comparator methods.
 - ScriptWrite.R: script to generate .R files run in Simulation Study.
 - utils.R: functions for plotting and analysis in Simulation Study.
-- Data files (.RData) available at the [Google Drive link](https://drive.google.com/drive/u/1/folders/1spEbcZB7oi232Hlf7FT9WU4xF4s5mleT).
+- Data files (.RData) available at the [Google Drive link](https://drive.google.com/drive/u/1/folders/1DDTEER5j1IWPt8_Ohl9R7bjPFdmas14u).
