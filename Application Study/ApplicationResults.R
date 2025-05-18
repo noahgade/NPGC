@@ -9,15 +9,15 @@ library(ggridges)
 library(ggtext)
 library(ggplot2)
 library(R.matlab)
-source("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/utils.R")
-load("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/ApplicationData.RData")
-load("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/ApplicationKey.RData")
+source("utils.R")
+load("ApplicationData.RData")
+load("ApplicationKey.RData")
 
 methods <- c("NPGC", "ZERO", "GAUSS")
 for(method in 1:length(methods)) {
   for(item in 1:3) {
-    if(file.exists(paste0("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/", methods[method], item, ".RData"))) {
-      load(paste0("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/", methods[method], item, ".RData"))
+    if(file.exists(paste0(methods[method], item, ".RData"))) {
+      load(paste0(methods[method], item, ".RData"))
     } else {
       print(paste0(methods[method], item, ".RData does not exist."))
     }
@@ -26,8 +26,8 @@ for(method in 1:length(methods)) {
 
 LASSO <- vector("list", length = 30)
 for(item in 1:30) {
-  if(file.exists(paste0("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/LResult", item, ".RData"))) {
-    load(paste0("~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/Results/LResult", item, ".RData"))
+  if(file.exists(paste0("LResult", item, ".RData"))) {
+    load(paste0("LResult", item, ".RData"))
     LASSO[[item]] <- LResult
   } else {
     print(paste0("LResult", item, ".RData does not exist."))
@@ -80,7 +80,7 @@ x.var <- sapply(ggplot_build(AppFigure2)$layout$panel_scales_x,
 # how many unique x-axis values are in each facet
 gp$widths[facet.columns] <- gp$widths[facet.columns] * x.var
 # plot result
-quartz(file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/AppFigure2.pdf", type = "pdf", width = 14, height = 3.6)
+quartz(file = "AppFigure2.pdf", type = "pdf", width = 14, height = 3.6)
 grid::grid.draw(gp)
 dev.off()
 
@@ -230,7 +230,7 @@ g_legend <- function(a.gplot) {
   return(legend)}
 leg <- g_legend(AppFigure3_5)
 
-quartz(file = "~/Wake Forest University Dropbox/Noah Gade/Research/NPGC/Application/AppFigure3.pdf", type = "pdf", width = 15, height = 13)
+quartz(file = "AppFigure3.pdf", type = "pdf", width = 15, height = 13)
 grid.arrange(arrangeGrob(AppFigure3_1 + theme(legend.position = "none"),
                          AppFigure3_2 + theme(legend.position = "none"),
                          AppFigure3_3 + theme(legend.position = "none"),
