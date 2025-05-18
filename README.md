@@ -15,6 +15,6 @@ Some data was derived from repository ac-1 of the Collaborative Research in Comp
 
 - Asari, H., M. Wehr, C. K. Machens, and A. M. Zador (2009). Auditory cortex and thalamic neuronal responses to various natural and synthetic sounds. CRCNS.org.
 
-We additionally cite the following for comparator methods in Section 4.
+We additionally cite the following for comparator methods in Section 4 and Section 5.
 
 - Tank, A., I. Covert, N. Foti, A. Shojaie, and E. B. Fox (2022). Neural granger causality. *IEEE Transactions on Pattern Analysis and Machine Intelligence* 44 (8), 4267–4279.
